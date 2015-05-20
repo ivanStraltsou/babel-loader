@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="../public/js/bundle.js"></script>
+
+</head>
+<body  ng-app="app" ng-controller="MainController as MainCtrl">
+
+<form ng-submit="MainCtrl.addRecord()">
+    <input placeholder="Name" ng-model="MainCtrl.record.name">
+    <input placeholder="Age" ng-model="MainCtrl.record.age">
+    <input placeholder="City" ng-model="MainCtrl.record.city">
+    <input type="submit" id="submit" value="Submit" />
+</form>
+<table>
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Age</td>
+            <td>City</td>
+        </tr>
+    </thead>
+    <tr ng-repeat="d in MainCtrl.data">
+        <td model="d.name" ind="$index" row-directive></td>
+        <td model="d.age" ind="$index" row-directive></td>
+        <td model="d.city" ind="$index" row-directive></td>
+    </tr>
+</table>
+<main-directive></main-directive>
+</body>
+</html>

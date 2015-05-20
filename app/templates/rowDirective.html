@@ -1,0 +1,5 @@
+<td ng-click="RowCtrl.setSelected(ind)">
+    <p ng-hide="RowCtrl.ifSelected(ind)">{{model}}</p>
+    <input ng-show="RowCtrl.ifSelected(ind)" ng-model="model" ng-blur="RowCtrl.save()">
+</td>
+
